@@ -1,14 +1,18 @@
 // tests/movieRoutes.test.js
+import { jest } from '@jest/globals';   // 👈 NEW: brings in the jest helpers
 import request from 'supertest';
 import app from '../server.js';
 import dotenv from 'dotenv';
-dotenv.config();               // ensures OMDB_API_KEY is loaded
+dotenv.config();                        // loads OMDB_API_KEY
+
+// Allow slower network responses (10 s instead of Jest’s default 5 s)
+jest.setTimeout(10_000);
 
 describe('Movie Finder API', () => {
-  jest.setTimeout(10000);      // network calls can be slow
-
   test('GET /api/search with valid title returns array', async () => {
-    const res = await request(app).get('/api/search').query({ title: 'batman' });
+    const res = await request(app)
+      .get('/api/search')
+      .query({ title: 'batman' });
 
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
