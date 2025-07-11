@@ -1,0 +1,37 @@
+# ── Node / npm ────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json.*   # lockfiles from obsolete npm versions
+
+# ── Environment & secrets ────────────────────────────────
+.env
+.env.*.local          # e.g. .env.development.local
+
+# ── Logs & OS noise ──────────────────────────────────────
+*.log
+.DS_Store
+Thumbs.db
+
+# ── Editor & tooling artefacts ───────────────────────────
+.vscode/
+.idea/
+*.swp
+
+# ── Coverage reports ─────────────────────────────────────
+coverage/
+*.lcov
+
+# ── Build / cache output (if you later bundle) ───────────
+dist/
+build/
+.tmp/
+
+# ── Documentation drafts ─────────────────────────────────
+docs/
+docs/**
+
+#   (The SBA tutorial lives at docs/SBA12_Tutorial.md and
+#    will now be ignored by Git; you can track final docs
+#    later by removing them from this section.)
