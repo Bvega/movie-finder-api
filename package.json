@@ -16,11 +16,10 @@
     "cross-env": "^7.0.3",
     "jest": "^29.7.0",
     "nodemon": "^3.0.3",
-    "supertest": "^6.3.3"       // 🔧 fixed: 6.4.2 doesn’t exist
+    "supertest": "^6.3.3"
   },
   "jest": {
     "testEnvironment": "node",
     "verbose": true
   }
 }
-
